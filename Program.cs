@@ -13,7 +13,7 @@ namespace AutoLeveler
     class Program
     {
         private static Obj_AI_Hero Player;
-        private static SpellSlot[] AbilitySequence;
+        private static int[] AbilitySequence;
 
         static void Main(string[] args)
         {
@@ -27,40 +27,40 @@ namespace AutoLeveler
             switch(Player.BaseSkinName)
             {
                 case "Caitlyn":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.W, SpellSlot.E, SpellSlot.Q, SpellSlot.Q, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E, SpellSlot.W, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W };
+                    AbilitySequence = new int[] { 1, 2, 0, 0, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1 };
                     break;
                 case "Chogath":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.E, SpellSlot.Q, SpellSlot.E, SpellSlot.W, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.W, SpellSlot.E, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W, SpellSlot.Q, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.Q };
+                    AbilitySequence = new int[] { 2, 0, 2, 1, 2, 3, 2, 1, 2, 1, 3, 1, 1, 0, 0, 3, 0, 0 };
                     break;
                 case "Ezreal":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E, SpellSlot.W, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W };
+                    AbilitySequence = new int[] { 0, 2, 0, 1, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1 };
                     break;
                 case "Graves":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E, SpellSlot.E, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W };
+                    AbilitySequence = new int[] { 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 3, 2, 2, 2, 1, 3, 1, 1 };
                     break;
                 case "Jinx":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.Q, SpellSlot.W, SpellSlot.E, SpellSlot.W, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.Q, SpellSlot.E, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E };
+                    AbilitySequence = new int[] { 0, 1, 2, 1, 1, 3, 1, 0, 1, 0, 3, 0, 0, 2, 2, 3, 2, 2 };
                     break;
                 case "Orianna":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.E, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W, SpellSlot.E, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E };
+                    AbilitySequence = new int[] { 2, 0, 1, 0, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
                     break; 
                 case "Ryze":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W, SpellSlot.E, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E };
+                    AbilitySequence = new int[] { 0, 1, 0, 2, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
                     break;
                 case "Sivir":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.W, SpellSlot.E, SpellSlot.Q, SpellSlot.Q, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W, SpellSlot.E, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E };
+                    AbilitySequence = new int[] { 1, 2, 0, 0, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
                     break;
                 case "Syndra":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E, SpellSlot.W, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W };
+                    AbilitySequence = new int[] { 0, 1, 0, 2, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1 };
                     break;
                 case "Tristana":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.E, SpellSlot.W, SpellSlot.E, SpellSlot.Q, SpellSlot.E, SpellSlot.R, SpellSlot.Q, SpellSlot.Q, SpellSlot.Q, SpellSlot.Q, SpellSlot.R, SpellSlot.W, SpellSlot.W, SpellSlot.W, SpellSlot.W, SpellSlot.R, SpellSlot.E, SpellSlot.E };
+                    AbilitySequence = new int[] { 2, 1, 2, 0, 2, 3, 0, 0, 0, 0, 3, 1, 1, 1, 1, 3, 2, 2 };
                     break;
                 case "TwistedFate":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.W, SpellSlot.Q, SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.W, SpellSlot.Q, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W, SpellSlot.E, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E };
+                    AbilitySequence = new int[] { 1, 0, 0, 2, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
                     break;
                 case "Ziggs":
-                    AbilitySequence = new SpellSlot[] { SpellSlot.Q, SpellSlot.E, SpellSlot.W, SpellSlot.Q, SpellSlot.Q, SpellSlot.R, SpellSlot.Q, SpellSlot.E, SpellSlot.Q, SpellSlot.E, SpellSlot.R, SpellSlot.E, SpellSlot.E, SpellSlot.W, SpellSlot.W, SpellSlot.R, SpellSlot.W, SpellSlot.W };
+                    AbilitySequence = new int[] { 0, 2, 1, 0, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1 };
                     break;
             }
 
@@ -84,7 +84,7 @@ namespace AutoLeveler
             {
                 for (int i = (QL + WL + EL + RL); i < Player.Level; i++)
                 {
-                    Player.Spellbook.LevelUpSpell(AbilitySequence[i]);
+                    Player.Spellbook.LevelUpSpell((SpellSlot)AbilitySequence[i]);
                 }
             }
         }
