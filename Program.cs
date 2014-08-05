@@ -66,16 +66,7 @@ namespace AutoLeveler
 
             if (AbilitySequence.Length == 18)
             {
-                int QL = Player.Spellbook.GetSpell(SpellSlot.Q).Level;
-                int WL = Player.Spellbook.GetSpell(SpellSlot.W).Level;
-                int EL = Player.Spellbook.GetSpell(SpellSlot.E).Level;
-                int RL = Player.Spellbook.GetSpell(SpellSlot.R).Level;
-
-                for (int i = (QL + WL + EL + RL); i < Player.Level; i++)
-                {
-                    Player.Spellbook.LevelUpSpell((SpellSlot)AbilitySequence[i]);
-                }
-
+                LevelSpellsUp(Player.Level);
                 CustomEvents.Unit.OnLevelUp += OnLevelUp;
                 Game.PrintChat("<font color='#fda74a'>>> Pingo's AutoLeveler loaded! <<");
             }
@@ -86,16 +77,19 @@ namespace AutoLeveler
         private static void OnLevelUp(Obj_AI_Base sender, CustomEvents.Unit.OnLevelUpEventArgs args)
         {
             if (sender.IsMe)
-            {
-                int QL = Player.Spellbook.GetSpell(SpellSlot.Q).Level;
-                int WL = Player.Spellbook.GetSpell(SpellSlot.W).Level;
-                int EL = Player.Spellbook.GetSpell(SpellSlot.E).Level;
-                int RL = Player.Spellbook.GetSpell(SpellSlot.R).Level;
+                LevelSpellsUp(args.NewLevel);
+        }
 
-                for (int i = (QL + WL + EL + RL); i < args.NewLevel; i++)
-                {
-                    Player.Spellbook.LevelUpSpell((SpellSlot)AbilitySequence[i]);
-                }
+        private static void LevelSpellsUp(int PlayerLevel)
+        {
+            int QL = Player.Spellbook.GetSpell(SpellSlot.Q).Level;
+            int WL = Player.Spellbook.GetSpell(SpellSlot.W).Level;
+            int EL = Player.Spellbook.GetSpell(SpellSlot.E).Level;
+            int RL = Player.Spellbook.GetSpell(SpellSlot.R).Level;
+
+            for (int i = (QL + WL + EL + RL); i < PlayerLevel; i++)
+            {
+                Player.Spellbook.LevelUpSpell((SpellSlot) AbilitySequence[i]);
             }
         }
     }
