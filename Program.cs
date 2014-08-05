@@ -66,23 +66,33 @@ namespace AutoLeveler
 
             if (AbilitySequence.Length == 18)
             {
+                int QL = Player.Spellbook.GetSpell(SpellSlot.Q).Level;
+                int WL = Player.Spellbook.GetSpell(SpellSlot.W).Level;
+                int EL = Player.Spellbook.GetSpell(SpellSlot.E).Level;
+                int RL = Player.Spellbook.GetSpell(SpellSlot.R).Level;
+
+                for (int i = (QL + WL + EL + RL); i < Player.Level; i++)
+                {
+                    Player.Spellbook.LevelUpSpell((SpellSlot)AbilitySequence[i]);
+                }
+
+                CustomEvents.Unit.OnLevelUp += OnLevelUp;
                 Game.PrintChat("<font color='#fda74a'>>> Pingo's AutoLeveler loaded! <<");
-                Game.OnGameUpdate += OnGameUpdate;
             }
             else
                 Game.PrintChat("<font color='#f0371e'>>> Error <<");
         }
 
-        private static void OnGameUpdate(EventArgs args)
+        private static void OnLevelUp(Obj_AI_Base sender, CustomEvents.Unit.OnLevelUpEventArgs args)
         {
-            int QL = Player.Spellbook.GetSpell(SpellSlot.Q).Level;
-            int WL = Player.Spellbook.GetSpell(SpellSlot.W).Level;
-            int EL = Player.Spellbook.GetSpell(SpellSlot.E).Level;
-            int RL = Player.Spellbook.GetSpell(SpellSlot.R).Level;
-
-            if ((QL + WL + EL + RL) < Player.Level)
+            if (sender.IsMe)
             {
-                for (int i = (QL + WL + EL + RL); i < Player.Level; i++)
+                int QL = Player.Spellbook.GetSpell(SpellSlot.Q).Level;
+                int WL = Player.Spellbook.GetSpell(SpellSlot.W).Level;
+                int EL = Player.Spellbook.GetSpell(SpellSlot.E).Level;
+                int RL = Player.Spellbook.GetSpell(SpellSlot.R).Level;
+
+                for (int i = (QL + WL + EL + RL); i < args.NewLevel; i++)
                 {
                     Player.Spellbook.LevelUpSpell((SpellSlot)AbilitySequence[i]);
                 }
