@@ -26,6 +26,9 @@ namespace AutoLeveler
 
             switch(Player.BaseSkinName)
             {
+                case "Annie":
+                    AbilitySequence = new int[] { 1, 0, 1, 0, 1, 3, 2, 1, 1, 0, 3, 0, 0, 2, 2, 3, 2, 2 };
+                    break;
                 case "Caitlyn":
                     AbilitySequence = new int[] { 1, 2, 0, 0, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1 };
                     break;
@@ -41,8 +44,14 @@ namespace AutoLeveler
                 case "Jinx":
                     AbilitySequence = new int[] { 0, 1, 2, 1, 1, 3, 1, 0, 1, 0, 3, 0, 0, 2, 2, 3, 2, 2 };
                     break;
+                case "KogMaw":
+                    AbilitySequence = new int[] { 1, 2, 1, 0, 1, 3, 1, 0, 1, 0, 3, 0, 0, 2, 2, 3, 2, 2 };
+                    break;
                 case "Orianna":
                     AbilitySequence = new int[] { 2, 0, 1, 0, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
+                    break;
+                case "Pantheon":
+                    AbilitySequence = new int[] { 0, 1, 0, 2, 0, 3, 0, 2, 0, 2, 2, 2, 3, 2, 2, 3, 2, 2 };
                     break; 
                 case "Ryze":
                     AbilitySequence = new int[] { 0, 1, 0, 2, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
@@ -58,6 +67,9 @@ namespace AutoLeveler
                     break;
                 case "TwistedFate":
                     AbilitySequence = new int[] { 1, 0, 0, 2, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
+                    break;
+                case "Xerath":
+                    AbilitySequence = new int[] { 0, 2, 0, 1, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
                     break;
                 case "Ziggs":
                     AbilitySequence = new int[] { 0, 2, 1, 0, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1 };
