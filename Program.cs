@@ -1,4 +1,4 @@
-﻿#region
+#region
 
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace AutoLeveler
         {
             Player = ObjectManager.Player;
 
-            switch(Player.BaseSkinName)
+            switch(Player.ChampionName)
             {
                 case "Annie":
                     AbilitySequence = new int[] { 1, 0, 1, 0, 1, 3, 2, 1, 1, 0, 3, 0, 0, 2, 2, 3, 2, 2 };
@@ -42,7 +42,7 @@ namespace AutoLeveler
                     AbilitySequence = new int[] { 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 3, 2, 2, 2, 1, 3, 1, 1 };
                     break;
                 case "Jinx":
-                    AbilitySequence = new int[] { 0, 1, 2, 1, 1, 3, 1, 0, 1, 0, 3, 0, 0, 2, 2, 3, 2, 2 };
+                    AbilitySequence = new int[] { 0, 1, 2, 0, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
                     break;
                 case "KogMaw":
                     AbilitySequence = new int[] { 1, 2, 1, 0, 1, 3, 1, 0, 1, 0, 3, 0, 0, 2, 2, 3, 2, 2 };
@@ -60,7 +60,7 @@ namespace AutoLeveler
                     AbilitySequence = new int[] { 1, 2, 0, 0, 0, 3, 0, 1, 0, 1, 3, 1, 1, 2, 2, 3, 2, 2 };
                     break;
                 case "Syndra":
-                    AbilitySequence = new int[] { 0, 1, 0, 2, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1 };
+                    AbilitySequence = new int[] { 0, 2, 1, 0, 0, 3, 0, 2, 0, 2, 3, 2, 2, 1, 1, 3, 1, 1 };
                     break;
                 case "Tristana":
                     AbilitySequence = new int[] { 2, 1, 2, 0, 2, 3, 0, 0, 0, 0, 3, 1, 1, 1, 1, 3, 2, 2 };
